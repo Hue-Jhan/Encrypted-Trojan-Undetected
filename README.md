@@ -62,7 +62,7 @@ Once the victim runs the exe, a new session will pop up on meterpreter, and u ca
 
 # 🛡 AV Detection
 
-<img align="right" src="media/trojan-shigata.png" width="200" />
+<img align="right" src="media/trojan-shigata.png" width="230" />
 
 Currently undetected by windows defender, but it's easily blocked by Bitdefender, even the free trial.
 Again Virus Total says that bitdefender won't classify the exe file as malicious, while Microsoft recognizes the malware.... it should be the exact opposite but idk.
