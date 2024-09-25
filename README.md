@@ -26,6 +26,8 @@ Here the shellcode is encrypted using a simple XOR operation, and then it's enco
 The final encryption consists in multiple rounds of the Xor/B64 encryption, its the most complex i made so far. The only problem is decoding and injecting it, i've been having some issues decoding it as the cmd crashes : (
 It's probably related to a buffer overflow due to the size of the encrypted shellcode.
 
+---
+
 # 💻 Code (Self Injection)
 
 **Code explained**:
@@ -60,9 +62,19 @@ Once the victim runs the exe, a new session will pop up on meterpreter, and u ca
 
 # 🛡 AV Detection
 
-<img align="right" src="media/vt1.png" width="350" />
+<img align="right" src="media/trojan-shigata.png" width="200" />
 
 Currently undetected by windows defender, but it's easily blocked by Bitdefender, even the free trial.
 Again Virus Total says that bitdefender won't classify the exe file as malicious, while Microsoft recognizes the malware.... it should be the exact opposite but idk.
 
+- Simple python xor: 23 av detections
+- Xor: 19 av detections
+- Base64: idk
+- Xor base 64: 11 av detections
+- Multiple round encryptions: idk but definitely less than 10
+
 Last thing: i run the malware using Termux, an android emulator for linux, because i didnt wanna setup networking stuff for my kali vm, cuz i had some issues trying to establish the session.
+
+<img align="left" src="media/trojan-shigata-simple-xor.png" width="310" />
+
+<img align="left" src="media/trojan-shigata-xor-base64.png" width="380" />
