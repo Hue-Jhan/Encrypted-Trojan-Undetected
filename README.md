@@ -1,3 +1,5 @@
+Outdated repo, check out my other repos such as [this one](https://github.com/Hue-Jhan/Trojan-through-Process-Hollowing)
+
 # Encrypted Trojans (Undetected)
 Simple proof of concept of an encrypted self-injection malware that creates a shell on a victim's pc, using Xor and Base64 encryption, undetected by Windows defender.
 
