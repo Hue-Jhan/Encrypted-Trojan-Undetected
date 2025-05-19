@@ -25,7 +25,7 @@ Here the shellcode is encrypted using a simple XOR operation, and then it's enco
 
 ### 5) Multiple Xor and Base64 encryptions
 
-The last encryption consists in multiple rounds of the Xor/B64 encryption.
+The last encryption consists in multiple rounds of the Xor/B64 encryption, it's probably uncompleted so check out my complete repo [here](https://github.com/Hue-Jhan/Simple-shellcode-crypter)
 
 ---
 
