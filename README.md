@@ -1,7 +1,7 @@
 Outdated repo, check out my other repos such as [this one](https://github.com/Hue-Jhan/Local-Process-injection-Trojan)
 
 # Encrypted Trojans
-Simple proof of concept of an encrypted self-injection malware that creates a shell on a victim's pc, using Xor and Base64 encryption, undetected by Windows defender.
+Simple proof of concept of an encrypted self-injection malware that creates a shell on a victim's pc, using Xor and Base64 encryption.
 
 # 💻 Code (Encryption)
 
