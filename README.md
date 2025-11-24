@@ -65,7 +65,7 @@ Once the victim runs the exe, a new session will pop up on meterpreter, and u ca
 
 <img align="right" src="media/trojan-shigata.png" width="230" />
 
-Undetected by windows defender, but it's easily blocked by Bitdefender, even the free trial.
+Sometimes undetected by windows defender, but it's easily blocked by Bitdefender, even the free trial.
 Again Virus Total says that bitdefender won't classify the exe file as malicious, while Microsoft recognizes the malware.... it should be the exact opposite but idk.
 
 - Simple python xor: 23 av detections
